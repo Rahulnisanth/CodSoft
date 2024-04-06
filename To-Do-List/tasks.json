@@ -1,1 +1,7 @@
-[{"task": "To complete the portal problems", "completed": true}, {"task": "Love some one!!", "completed": false}, {"task": "asdfghj wjcwejn wekjcwecjn", "completed": false}]
+[
+  { "task": "Love some one!!", "completed": true },
+  { "task": "asdfghj wjcwejn wekjcwecjn", "completed": false },
+  { "task": "To checkout linkedin posts.", "completed": false },
+  { "task": "To debug the blockchain project", "completed": false },
+  { "task": "To update portfolio", "completed": false }
+]
