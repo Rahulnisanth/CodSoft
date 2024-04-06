@@ -21,7 +21,10 @@ def view_tasks(tasks):
     if not tasks:
         print('Warning: You have not added any tasks.')
     for idx, task in enumerate(tasks, start=1):
-        print(f"[{idx}]{' > X <' if task['completed'] else '  ' } {task['task']}")
+        if task['completed']:
+            print(f"[{idx}] [X] {task['task']}")
+        else:
+            print(f"[{idx}]     {task['task']}")
 
 
 def remove_task(tasks, idx):
@@ -43,10 +46,10 @@ def main():
     tasks = load_tasks()
 
     while True:
-        print("\nTo-Do List Menu :")
+        print("\nTo-Do List Menu:-")
         print("[1] Add Task")
         print("[2] View Tasks")
-        print("[3] Mark Tasks as Completed")
+        print("[3] Mark Task as Completed")
         print("[4] Remove Task")
         print("[5] Quit")
 
@@ -59,7 +62,7 @@ def main():
             save_tasks(tasks)
             print('Message: Successfully added your task.')
         elif choice == 2:
-            print('------------ Here is your tasks ------------')
+            print('------------ Enrolled Tasks ------------')
             view_tasks(tasks)
             print('--------------------------------------------')
         elif choice == 3:
