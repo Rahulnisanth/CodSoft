@@ -9,7 +9,7 @@ def sub(nums):
 def mul(nums):
     return math.prod(nums)
 
-def division(nums):
+def div(nums):
     if nums[1] == 0:
         return "Error occurred, Division by zero"
     return nums[0] // nums[1], nums[0] % nums[1]
@@ -44,19 +44,19 @@ def main():
 
         nums = list(map(int, input("Enter the numbers separated by space: ").split()))
         if choice == '1':
-            print(f"The Result for addition is:  {add(nums)}")
+            print(f"\nThe Result for addition is:  {add(nums)}")
         elif choice == '2':
-            print(f"The Result for subtraction is:  {sub(nums)}")
+            print(f"\nThe Result for subtraction is:  {sub(nums)}")
         elif choice == '3':
-            print(f"The Result for multiplication is:  {mul(nums)}")
+            print(f"\nThe Result for multiplication is:  {mul(nums)}")
         elif choice == '4':
-            quotient, remainder = division(nums)
-            print(f"Quotient:  {quotient}")
+            quotient, remainder = div(nums)
+            print(f"\nQuotient:  {quotient}")
             print(f"Remainder:  {remainder}")
         elif choice == '5':
-            print(f"The Result for {nums[0]} power {nums[1]} is:  {power(nums)}")
+            print(f"\nThe Result for {nums[0]} power {nums[1]} is:  {power(nums)}")
         elif choice == '6':
-            print(f"Square Root of {nums[0]} is:  {sqrt(nums)}")
+            print(f"\nSquare Root of {nums[0]} is:  {sqrt(nums)}")
 
 if __name__ == '__main__':
     main()
