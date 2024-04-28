@@ -14,7 +14,7 @@ class ContactBook:
         self.contacts.append(contact)
     
     # Viewing contacts :
-    def view_contact(self):
+    def view_contacts(self):
         if not self.contacts:
             print("Message: Your contact book is empty.")
         else:
@@ -52,3 +52,51 @@ class ContactBook:
                 return
         print("Message: Contact not found.")
 
+def main():
+    contact_book = ContactBook()
+
+    while True:
+        print("\nContact Book Menu:")
+        print("1. Add Contact")
+        print("2. View Contacts")
+        print("3. Search Contact")
+        print("4. Update Contact")
+        print("5. Delete Contact")
+        print("6. Exit")
+
+        choice = input("Enter your choice (1-6): ")
+
+        if choice == '1':
+            name = input("Enter contact name: ")
+            phone_number = input("Enter contact phone number: ")
+            email = input("Enter contact email: ")
+            location = input("Enter contact location: ")
+            contact = Contact(name, phone_number, email, location)
+            contact_book.add_contact(contact)
+            print("Contact added successfully.")
+
+        elif choice == '2':
+            contact_book.view_contacts()
+
+        elif choice == '3':
+            keyword = input("Enter search keyword (name or location)/(phone or email): ")
+            contact_book.search_contact(keyword)
+
+        elif choice == '4':
+            name = input("Enter the name of the contact to update: ")
+            new_phone_number = input("Enter new phone number: ")
+            contact_book.update_contact(name, new_phone_number)
+
+        elif choice == '5':
+            name = input("Enter the name of the contact to delete: ")
+            contact_book.delete_contact(name)
+
+        elif choice == '6':
+            print("Exiting Contact Book...!")
+            break
+
+        else:
+            print("Invalid choice. Please enter a number between 1 and 6.")
+
+if __name__ == "__main__":
+    main()
